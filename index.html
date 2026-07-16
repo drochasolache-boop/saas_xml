@@ -31,12 +31,8 @@
     background: #1a1a2e;
   }
   .bg-blob {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.85;
-    z-index: 0;
-    animation: float 18s ease-in-out infinite;
+    position: fixed; border-radius: 50%; filter: blur(80px);
+    opacity: 0.85; z-index: 0; animation: float 18s ease-in-out infinite;
   }
   .blob-1 { width: 480px; height: 480px; background: #7c3aed; top: -120px; left: -100px; }
   .blob-2 { width: 420px; height: 420px; background: #ec4899; bottom: -140px; right: -80px; animation-delay: -6s; }
@@ -47,10 +43,7 @@
     66% { transform: translate(-30px, 40px) scale(0.95); }
   }
   .card {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 440px;
+    position: relative; z-index: 1; width: 100%; max-width: 440px;
     background: var(--glass-bg);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -60,102 +53,88 @@
     padding: 44px 38px;
   }
   .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-    margin-bottom: 16px;
-    font-weight: 600;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--text-faint); margin-bottom: 16px; font-weight: 600;
   }
   h1 {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   }
   .arrow { color: var(--text-faint); font-weight: 300; }
-  .sub {
-    font-size: 14px;
-    color: var(--text-soft);
-    margin-bottom: 34px;
-    line-height: 1.5;
+  .sub { font-size: 14px; color: var(--text-soft); margin-bottom: 34px; line-height: 1.5; }
+
+  .hidden { display: none !important; }
+
+  /* Login */
+  .btn-google {
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    color: var(--text); font-family: inherit; font-size: 15px; font-weight: 600;
+    padding: 15px; border-radius: 16px; cursor: pointer; transition: all .2s ease;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   }
+  .btn-google:hover { background: rgba(255,255,255,0.28); transform: translateY(-2px); }
+  .btn-google svg { width: 20px; height: 20px; }
+
+  /* User bar */
+  .userbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-bottom: 26px; padding: 10px 14px;
+    background: var(--glass-bg-strong); border: 1px solid var(--glass-border-soft, rgba(255,255,255,0.18));
+    border-radius: 14px; font-size: 13px;
+  }
+  .userbar .who { color: var(--text-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .userbar .who strong { color: var(--text); font-weight: 600; }
+  .btn-logout {
+    flex-shrink: 0; border: 1px solid var(--glass-border); background: transparent;
+    color: var(--text-soft); font-family: inherit; font-size: 12px; font-weight: 600;
+    padding: 7px 12px; border-radius: 10px; cursor: pointer; transition: all .2s ease;
+  }
+  .btn-logout:hover { color: var(--text); border-color: var(--text-soft); }
+
   .drop {
     background: var(--glass-bg-strong);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1.5px dashed var(--glass-border);
-    border-radius: 20px;
-    padding: 38px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: all .2s ease;
-    margin-bottom: 22px;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1.5px dashed var(--glass-border); border-radius: 20px;
+    padding: 38px 20px; text-align: center; cursor: pointer;
+    transition: all .2s ease; margin-bottom: 22px;
   }
-  .drop:hover, .drop.over {
-    border-color: var(--accent);
-    background: rgba(74, 222, 128, 0.12);
-    transform: translateY(-2px);
-  }
+  .drop:hover, .drop.over { border-color: var(--accent); background: rgba(74, 222, 128, 0.12); transform: translateY(-2px); }
   .drop.has-file { border-style: solid; border-color: var(--accent); background: rgba(74, 222, 128, 0.14); }
   .drop-icon { font-size: 26px; margin-bottom: 12px; opacity: 0.85; }
   .drop-main { font-size: 15px; margin-bottom: 5px; font-weight: 500; }
   .drop-sub { font-size: 12px; color: var(--text-faint); }
   .file-name { font-size: 14px; color: var(--accent); word-break: break-all; font-weight: 600; }
   input[type="file"] { display: none; }
-  button {
-    width: 100%;
-    border: 1px solid var(--glass-border);
+
+  button.convert {
+    width: 100%; border: 1px solid var(--glass-border);
     background: var(--glass-bg-strong);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: var(--text);
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    padding: 16px;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all .2s ease;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    color: var(--text); font-family: inherit; font-size: 15px; font-weight: 600;
+    letter-spacing: 0.02em; padding: 16px; border-radius: 16px; cursor: pointer;
+    transition: all .2s ease; box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   }
-  button:hover:not(:disabled) {
-    background: rgba(74, 222, 128, 0.25);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(74, 222, 128, 0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+  button.convert:hover:not(:disabled) {
+    background: rgba(74, 222, 128, 0.25); border-color: var(--accent);
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74, 222, 128, 0.3), inset 0 1px 0 rgba(255,255,255,0.3);
   }
-  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  button.convert:disabled { opacity: 0.45; cursor: not-allowed; }
   button:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
-  .status {
-    margin-top: 20px;
-    font-size: 13px;
-    min-height: 20px;
-    text-align: center;
-    font-weight: 500;
-  }
+
+  .status { margin-top: 20px; font-size: 13px; min-height: 20px; text-align: center; font-weight: 500; }
   .status.ok { color: var(--accent); }
   .status.err { color: var(--error); }
   .status.load { color: var(--text-soft); }
   .spinner {
-    display: inline-block;
-    width: 13px; height: 13px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-top-color: var(--text);
-    border-radius: 50%;
-    animation: spin .7s linear infinite;
-    vertical-align: middle;
-    margin-right: 7px;
+    display: inline-block; width: 13px; height: 13px;
+    border: 2px solid rgba(255,255,255,0.3); border-top-color: var(--text);
+    border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 7px;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  @media (prefers-reduced-motion: reduce) {
-    *, .bg-blob { animation: none !important; transition: none !important; }
-  }
+  @media (prefers-reduced-motion: reduce) { *, .bg-blob { animation: none !important; transition: none !important; } }
 </style>
 </head>
 <body>
@@ -168,24 +147,86 @@
     <h1><span class="fmt">XML</span> <span class="arrow">→</span> <span class="fmt">Excel</span></h1>
     <p class="sub">Sube un archivo XML y recibe una hoja de cálculo lista para usar.</p>
 
-    <div class="drop" id="drop">
-      <div class="drop-icon" id="dropIcon">⤓</div>
-      <div class="drop-main" id="dropMain">Arrastra tu XML aquí</div>
-      <div class="drop-sub" id="dropSub">o haz clic para elegir un archivo</div>
+    <!-- Vista LOGIN -->
+    <div id="loginView">
+      <button class="btn-google" id="googleBtn">
+        <svg viewBox="0 0 24 24"><path fill="#fff" d="M12.24 10.28v3.63h5.05c-.22 1.17-.9 2.16-1.9 2.83l3.07 2.38c1.8-1.66 2.83-4.1 2.83-7 0-.67-.06-1.32-.17-1.94H12.24z" opacity=".9"/><path fill="#fff" d="M12 22c2.7 0 4.96-.9 6.62-2.42l-3.07-2.38c-.85.57-1.94.9-3.55.9-2.73 0-5.04-1.84-5.87-4.32l-3.17 2.44C4.6 19.9 8 22 12 22z" opacity=".7"/><path fill="#fff" d="M6.13 13.78A5.98 5.98 0 015.8 12c0-.62.11-1.22.31-1.78L2.94 7.78A9.98 9.98 0 002 12c0 1.6.38 3.12 1.06 4.44l3.07-2.66z" opacity=".5"/><path fill="#fff" d="M12 5.9c1.47 0 2.79.5 3.83 1.5l2.72-2.72C16.96 3.12 14.7 2 12 2 8 2 4.6 4.1 2.94 7.78l3.17 2.44C6.96 7.74 9.27 5.9 12 5.9z" opacity=".8"/></svg>
+        Entrar con Google
+      </button>
+      <div class="status" id="loginStatus"></div>
     </div>
-    <input type="file" id="fileInput" accept=".xml,text/xml,application/xml">
 
-    <button id="convertBtn" disabled>Convertir a Excel</button>
+    <!-- Vista CONVERSOR (oculta hasta login) -->
+    <div id="appView" class="hidden">
+      <div class="userbar">
+        <span class="who">Conectado como <strong id="userEmail">—</strong></span>
+        <button class="btn-logout" id="logoutBtn">Salir</button>
+      </div>
 
-    <div class="status" id="status"></div>
+      <div class="drop" id="drop">
+        <div class="drop-icon" id="dropIcon">⤓</div>
+        <div class="drop-main" id="dropMain">Arrastra tu XML aquí</div>
+        <div class="drop-sub" id="dropSub">o haz clic para elegir un archivo</div>
+      </div>
+      <input type="file" id="fileInput" accept=".xml,text/xml,application/xml">
+
+      <button class="convert" id="convertBtn" disabled>Convertir a Excel</button>
+      <div class="status" id="status"></div>
+    </div>
   </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  // ==== CONFIG: Function URL de saas-api y la API key ====
+  // ==== CONFIG ====
+  const SUPABASE_URL = "https://djgxmoedmsqvlueezaaz.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_m5LsnXlkd3ehifZr7IiuXA_cd6rgPwy";
   const API_URL = "https://dyawtwo7r4drw3stcs6rcfjcum0enemn.lambda-url.us-west-1.on.aws/";
-  const API_KEY = "cliente-demo-key-123";
-  // =======================================================
+  // ================
 
+  const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  const loginView = document.getElementById("loginView");
+  const appView = document.getElementById("appView");
+  const googleBtn = document.getElementById("googleBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const userEmail = document.getElementById("userEmail");
+  const loginStatus = document.getElementById("loginStatus");
+
+  // --- Sesión ---
+  async function refreshSession() {
+    const { data } = await sb.auth.getSession();
+    if (data.session) {
+      userEmail.textContent = data.session.user.email;
+      loginView.classList.add("hidden");
+      appView.classList.remove("hidden");
+    } else {
+      appView.classList.add("hidden");
+      loginView.classList.remove("hidden");
+    }
+  }
+
+  googleBtn.addEventListener("click", async () => {
+    loginStatus.className = "status load";
+    loginStatus.innerHTML = '<span class="spinner"></span>Redirigiendo a Google…';
+    const { error } = await sb.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.href }
+    });
+    if (error) {
+      loginStatus.className = "status err";
+      loginStatus.textContent = "No se pudo iniciar sesión: " + error.message;
+    }
+  });
+
+  logoutBtn.addEventListener("click", async () => {
+    await sb.auth.signOut();
+    refreshSession();
+  });
+
+  sb.auth.onAuthStateChange(() => refreshSession());
+  refreshSession();
+
+  // --- Conversor ---
   const drop = document.getElementById("drop");
   const fileInput = document.getElementById("fileInput");
   const convertBtn = document.getElementById("convertBtn");
@@ -196,19 +237,10 @@
   let selectedFile = null;
 
   drop.addEventListener("click", () => fileInput.click());
-  ["dragover", "dragenter"].forEach(ev =>
-    drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); })
-  );
-  ["dragleave", "drop"].forEach(ev =>
-    drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); })
-  );
-  drop.addEventListener("drop", e => {
-    const f = e.dataTransfer.files[0];
-    if (f) setFile(f);
-  });
-  fileInput.addEventListener("change", e => {
-    if (e.target.files[0]) setFile(e.target.files[0]);
-  });
+  ["dragover","dragenter"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+  ["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+  drop.addEventListener("drop", e => { const f = e.dataTransfer.files[0]; if (f) setFile(f); });
+  fileInput.addEventListener("change", e => { if (e.target.files[0]) setFile(e.target.files[0]); });
 
   function setFile(f) {
     if (!f.name.toLowerCase().endsWith(".xml")) {
@@ -221,8 +253,7 @@
     dropMain.innerHTML = '<span class="file-name">' + f.name + "</span>";
     dropSub.textContent = (f.size / 1024).toFixed(1) + " KB · clic para cambiar";
     convertBtn.disabled = false;
-    statusEl.className = "status";
-    statusEl.textContent = "";
+    statusEl.className = "status"; statusEl.textContent = "";
   }
 
   function showStatus(kind, msg, spinner) {
@@ -235,10 +266,17 @@
     convertBtn.disabled = true;
     showStatus("load", "Convirtiendo…", true);
     try {
+      const { data } = await sb.auth.getSession();
+      if (!data.session) { showStatus("err", "Tu sesión expiró. Vuelve a entrar."); refreshSession(); return; }
+      const token = data.session.access_token;
+
       const xmlText = await selectedFile.text();
       const res = await fetch(API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/xml", "x-api-key": API_KEY },
+        headers: {
+          "Content-Type": "application/xml",
+          "Authorization": "Bearer " + token
+        },
         body: xmlText
       });
       if (!res.ok) {
@@ -251,9 +289,7 @@
       const a = document.createElement("a");
       a.href = url;
       a.download = selectedFile.name.replace(/\.xml$/i, "") + ".xlsx";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      document.body.appendChild(a); a.click(); a.remove();
       URL.revokeObjectURL(url);
       showStatus("ok", "Listo. Tu Excel se descargó.");
     } catch (err) {
