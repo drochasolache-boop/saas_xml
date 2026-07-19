@@ -284,7 +284,7 @@
 
       // 2) subir el CSV directo a S3
       showStatus("load","Subiendo archivo…",true);
-      const putRes = await fetch(up.upload_url, { method:"PUT", headers:{ "Content-Type":"text/csv" }, body:selectedFile });
+      const putRes = await fetch(up.upload_url, { method:"PUT", body:selectedFile });
       if(!putRes.ok) throw new Error("No se pudo subir el archivo a S3 ("+putRes.status+")");
 
       // 3) generar el ACES
@@ -307,4 +307,3 @@
 </script>
 </body>
 </html>
-
